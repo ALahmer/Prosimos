@@ -1,0 +1,19 @@
+BIMP RESULTS ON 10000 INSTANCES - WITH EXPLICIT GATEWAYS;;;;;;;;
+IN MILLISECONDS;;;;;IN WEEKS;;;
+KPI;Min;Average;Max;;KPI;Min;Average;Max
+Process Cycle Time (s);1590524383;1,14E+07;2,11E+07;====>;Process Cycle Time (s);2,629835289;0,018813403;0,034809902
+Process Cycle Time excluding out of timetable hours (s);1590524383;1,14E+07;2,11E+07;====>;Process Cycle Time excluding out of timetable hours (s);2,629835289;0,018813403;0,034809902
+Process Waiting Time (s);0;9408640,428;1,87E+07;====>;Process Waiting Time (s);0;0,015556614;0,03097289
+Accumulated Process Duration (s);2484004,019;1,24E+07;2,21E+07;====>;Accumulated Process Duration (s);0,00410715;0,020469758;0,03658749
+Cost;0;0;0;====>;Cost;0;0;0
+;;;;;;;;
+;;;;;;;;
+PROSIMOS RESULTS ON 10000 INSTANCES - WITH EXPLICIT GATEWAYS;;;;;;;;
+IN SECONDS;;;;;IN WEEKS;;;
+KPI;Min;Average;Max;;KPI;Min;Average;Max
+cycle_time;1189133,335;10464963,83;19498254,34;====>;cycle_time;1,966159615;17,30318093;32,23917715
+processing_time;1231624,702;1915584,635;2562111,544;====>;processing_time;2,036416504;3,167302637;4,236295542
+idle_cycle_time;1528346,686;10518993,2;19498277,34;====>;idle_cycle_time;2,52702825;17,39251521;32,23921518
+idle_processing_time;1289702,771;1969614,008;2562137,544;====>;idle_processing_time;2,132445058;3,256636918;4,236338531
+waiting_time;0;8623156,837;17259754,65;====>;waiting_time;0;14,25786514;28,53795412
+idle_time;13;55916,2357;477124,0905;====>;idle_time;2,14947E-05;0,092454093;0,788895652

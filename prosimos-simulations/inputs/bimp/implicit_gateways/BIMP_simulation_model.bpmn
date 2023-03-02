@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8"?><definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:qbp="http://www.qbp-simulator.com/Schema201212" xmlns:qbpapi="http://www.qbp-simulator.com/ApiSchema201212" targetNamespace="http://www.omg.org/bpmn20" exporter="ProM. http://www.promtools.org/prom6" exporterVersion="6.3" xsi:schemaLocation="http://www.omg.org/spec/BPMN/20100524/MODEL BPMN20.xsd"><process id="proc_586570383">
+<startEvent id="node_ec4fc392-230f-4ac8-bf0d-9a5327a688f6" name="START EVENT"/>
+<endEvent id="node_92781840-69aa-493c-b264-e4355237434e" name="END EVENT"/>
+<task id="node_aac5b3dc-6216-410b-8dbb-7ea7081d8d8f" name="Create Purchase Requisition"/>
+<task id="node_b9ecb46e-5c07-4395-a682-129f75db501d" name="Create Purchase Order"/>
+<task id="node_5f3c2f00-3e18-4681-9878-559c8bb9a229" name="Print and Send Purchase Order (Paper)"/>
+<task id="node_bde166fa-3414-49ae-9c52-e3f3da7d31a1" name="Receive Order Confirmation"/>
+<task id="node_b5c43472-b580-456a-b6ce-b2c2826c7066" name="Record Goods Receipt"/>
+<task id="node_1801d33c-c54c-4b5c-b8ea-8f82a929a7d8" name="Record Invoice Receipt"/>
+<task id="node_3e7949b8-a6bb-4571-9391-1cf9a17ff9ba" name="Clear Invoice"/>
+<exclusiveGateway id="node_a34f69ac-104d-4dd9-adee-2e0cbc639df6" name="Exclusive gateway" gatewayDirection="Diverging">
+<incoming>
+node_70a53de9-2cb9-484c-a92f-1037f1557355</incoming>
+<outgoing>
+node_389d893f-ddf2-4d42-abec-ed77b7fff99d</outgoing>
+<outgoing>
+node_7ababcab-2042-4c25-883b-c21a8d4e9b71</outgoing>
+</exclusiveGateway>
+<exclusiveGateway id="node_d1e5eae4-e5b4-4add-8bec-90a41b4e7c8b" name="Exclusive gateway" gatewayDirection="Diverging">
+<incoming>
+node_2c18f997-00a7-47a0-9bb9-5040c212de01</incoming>
+<outgoing>
+node_f0616585-f27a-44a4-9f0d-6c42d094c7f9</outgoing>
+<outgoing>
+node_dc2b44d5-4a0c-4820-9fc9-f095b249fc0e</outgoing>
+</exclusiveGateway>
+<exclusiveGateway id="node_1c5a9dc5-5204-4e73-bfad-42e61d7e9785" name="Exclusive gateway" gatewayDirection="Mixed">
+<incoming>
+node_f0616585-f27a-44a4-9f0d-6c42d094c7f9</incoming>
+<incoming>
+node_99e7d2c6-2b12-4e9a-8df6-5e1d7cd54ba8</incoming>
+<outgoing>
+node_8a1c7a37-99e5-41ab-9a5b-347b6a9d652c</outgoing>
+<outgoing>
+node_c3dfa667-69cf-4655-89de-7a54bacfce99</outgoing>
+</exclusiveGateway>
+<exclusiveGateway id="node_add03eea-2249-4a03-bdb0-caa38064d6f3" name="Exclusive gateway" gatewayDirection="Converging">
+<incoming>
+node_452ef331-791f-4ac5-9faf-576a90a68b7d</incoming>
+<incoming>
+node_c3dfa667-69cf-4655-89de-7a54bacfce99</incoming>
+<outgoing>
+node_bb85603b-3960-48df-8bba-00b30cc9c151</outgoing>
+</exclusiveGateway>
+<parallelGateway id="node_55569e72-120d-4f4a-afa4-5094a8ed2d4f" name="Parallel gateway" gatewayDirection="Diverging">
+<incoming>
+node_bb85603b-3960-48df-8bba-00b30cc9c151</incoming>
+<outgoing>
+node_c1213c52-d7e8-443b-8dbc-698d8dbb0fc6</outgoing>
+<outgoing>
+node_d263a059-1410-4890-a4d4-35a800fca5fa</outgoing>
+</parallelGateway>
+<parallelGateway id="node_831b7367-882e-42f5-82f4-23b566b109b8" name="Parallel gateway" gatewayDirection="Converging">
+<incoming>
+node_73fd211a-6703-4494-8f60-dd25a07d8c65</incoming>
+<incoming>
+node_4aa114c6-024a-4dc1-b78c-285456ebcf0e</incoming>
+<outgoing>
+node_2fc822e4-2722-4fae-b0e5-c114ffebe15c</outgoing>
+</parallelGateway>
+<sequenceFlow id="node_7ababcab-2042-4c25-883b-c21a8d4e9b71" name="" sourceRef="node_a34f69ac-104d-4dd9-adee-2e0cbc639df6" targetRef="node_aac5b3dc-6216-410b-8dbb-7ea7081d8d8f"/>
+<sequenceFlow id="node_24d97aa6-6f16-4c26-bd9e-7a86ca1a6945" name="" sourceRef="node_3e7949b8-a6bb-4571-9391-1cf9a17ff9ba" targetRef="node_92781840-69aa-493c-b264-e4355237434e"/>
+<sequenceFlow id="node_2c18f997-00a7-47a0-9bb9-5040c212de01" name="" sourceRef="node_b9ecb46e-5c07-4395-a682-129f75db501d" targetRef="node_d1e5eae4-e5b4-4add-8bec-90a41b4e7c8b"/>
+<sequenceFlow id="node_dc2b44d5-4a0c-4820-9fc9-f095b249fc0e" name="" sourceRef="node_d1e5eae4-e5b4-4add-8bec-90a41b4e7c8b" targetRef="node_5f3c2f00-3e18-4681-9878-559c8bb9a229"/>
+<sequenceFlow id="node_99e7d2c6-2b12-4e9a-8df6-5e1d7cd54ba8" name="" sourceRef="node_5f3c2f00-3e18-4681-9878-559c8bb9a229" targetRef="node_1c5a9dc5-5204-4e73-bfad-42e61d7e9785"/>
+<sequenceFlow id="node_452ef331-791f-4ac5-9faf-576a90a68b7d" name="" sourceRef="node_bde166fa-3414-49ae-9c52-e3f3da7d31a1" targetRef="node_add03eea-2249-4a03-bdb0-caa38064d6f3"/>
+<sequenceFlow id="node_d263a059-1410-4890-a4d4-35a800fca5fa" name="" sourceRef="node_55569e72-120d-4f4a-afa4-5094a8ed2d4f" targetRef="node_b5c43472-b580-456a-b6ce-b2c2826c7066"/>
+<sequenceFlow id="node_73fd211a-6703-4494-8f60-dd25a07d8c65" name="" sourceRef="node_1801d33c-c54c-4b5c-b8ea-8f82a929a7d8" targetRef="node_831b7367-882e-42f5-82f4-23b566b109b8"/>
+<sequenceFlow id="node_4aa114c6-024a-4dc1-b78c-285456ebcf0e" name="" sourceRef="node_b5c43472-b580-456a-b6ce-b2c2826c7066" targetRef="node_831b7367-882e-42f5-82f4-23b566b109b8"/>
+<sequenceFlow id="node_2fc822e4-2722-4fae-b0e5-c114ffebe15c" name="" sourceRef="node_831b7367-882e-42f5-82f4-23b566b109b8" targetRef="node_3e7949b8-a6bb-4571-9391-1cf9a17ff9ba"/>
+<sequenceFlow id="node_c1213c52-d7e8-443b-8dbc-698d8dbb0fc6" name="" sourceRef="node_55569e72-120d-4f4a-afa4-5094a8ed2d4f" targetRef="node_1801d33c-c54c-4b5c-b8ea-8f82a929a7d8"/>
+<sequenceFlow id="node_f0616585-f27a-44a4-9f0d-6c42d094c7f9" name="" sourceRef="node_d1e5eae4-e5b4-4add-8bec-90a41b4e7c8b" targetRef="node_1c5a9dc5-5204-4e73-bfad-42e61d7e9785"/>
+<sequenceFlow id="node_bb85603b-3960-48df-8bba-00b30cc9c151" name="" sourceRef="node_add03eea-2249-4a03-bdb0-caa38064d6f3" targetRef="node_55569e72-120d-4f4a-afa4-5094a8ed2d4f"/>
+<sequenceFlow id="node_70a53de9-2cb9-484c-a92f-1037f1557355" name="" sourceRef="node_ec4fc392-230f-4ac8-bf0d-9a5327a688f6" targetRef="node_a34f69ac-104d-4dd9-adee-2e0cbc639df6"/>
+<sequenceFlow id="node_c3dfa667-69cf-4655-89de-7a54bacfce99" name="" sourceRef="node_1c5a9dc5-5204-4e73-bfad-42e61d7e9785" targetRef="node_add03eea-2249-4a03-bdb0-caa38064d6f3"/>
+<sequenceFlow id="node_8a1c7a37-99e5-41ab-9a5b-347b6a9d652c" name="" sourceRef="node_1c5a9dc5-5204-4e73-bfad-42e61d7e9785" targetRef="node_bde166fa-3414-49ae-9c52-e3f3da7d31a1"/>
+<sequenceFlow id="node_389d893f-ddf2-4d42-abec-ed77b7fff99d" name="" sourceRef="node_a34f69ac-104d-4dd9-adee-2e0cbc639df6" targetRef="node_b9ecb46e-5c07-4395-a682-129f75db501d"/>
+<sequenceFlow id="node_785238cf-9299-4c8a-943b-712236364c81" name="" sourceRef="node_aac5b3dc-6216-410b-8dbb-7ea7081d8d8f" targetRef="node_b9ecb46e-5c07-4395-a682-129f75db501d"/>
+</process>
+<bpmndi:BPMNDiagram id="id_1334017332">
+<bpmndi:BPMNPlane bpmnElement="proc_586570383">
+<bpmndi:BPMNShape bpmnElement="node_aac5b3dc-6216-410b-8dbb-7ea7081d8d8f">
+<dc:Bounds x="151.0" y="127.0" width="80.0" height="40.0"/>
+<bpmndi:BPMNLabel/>
+</bpmndi:BPMNShape>
+<bpmndi:BPMNShape bpmnElement="node_92781840-69aa-493c-b264-e4355237434e">
+<dc:Bounds x="1306.0" y="143.5" width="25.0" height="25.0"/>
+<bpmndi:BPMNLabel/>
+</bpmndi:BPMNShape>
+<bpmndi:BPMNShape bpmnElement="node_b5c43472-b580-456a-b6ce-b2c2826c7066">
+<dc:Bounds x="971.0" y="171.0" width="80.0" height="40.0"/>
+<bpmndi:BPMNLabel/>
+</bpmndi:BPMNShape>
+<bpmndi:BPMNShape bpmnElement="node_831b7367-882e-42f5-82f4-23b566b109b8">
+<dc:Bounds x="1101.0" y="143.5" width="25.0" height="25.0"/>
+<bpmndi:BPMNLabel/>
+</bpmndi:BPMNShape>
+<bpmndi:BPMNShape bpmnElement="node_bde166fa-3414-49ae-9c52-e3f3da7d31a1">
+<dc:Bounds x="691.0" y="157.0" width="80.0" height="40.0"/>
+<bpmndi:BPMNLabel/>
+</bpmndi:BPMNShape>
+<bpmndi:BPMNShape bpmnElement="node_1c5a9dc5-5204-4e73-bfad-42e61d7e9785">
+<dc:Bounds x="616.0" y="149.5" width="25.0" height="25.0"/>
+<bpmndi:BPMNLabel/>
+</bpmndi:BPMNShape>
+<bpmndi:BPMNShape bpmnElement="node_b9ecb46e-5c07-4395-a682-129f75db501d">
+<dc:Bounds x="281.0" y="151.0" width="80.0" height="40.0"/>
+<bpmndi:BPMNLabel/>
+</bpmndi:BPMNShape>
+<bpmndi:BPMNShape bpmnElement="node_a34f69ac-104d-4dd9-adee-2e0cbc639df6">
+<dc:Bounds x="76.0" y="157.5" width="25.0" height="25.0"/>
+<bpmndi:BPMNLabel/>
+</bpmndi:BPMNShape>
+<bpmndi:BPMNShape bpmnElement="node_3e7949b8-a6bb-4571-9391-1cf9a17ff9ba">
+<dc:Bounds x="1176.0" y="136.0" width="80.0" height="40.0"/>
+<bpmndi:BPMNLabel/>
+</bpmndi:BPMNShape>
+<bpmndi:BPMNShape bpmnElement="node_1801d33c-c54c-4b5c-b8ea-8f82a929a7d8">
+<dc:Bounds x="971.0" y="101.0" width="80.0" height="40.0"/>
+<bpmndi:BPMNLabel/>
+</bpmndi:BPMNShape>
+<bpmndi:BPMNShape bpmnElement="node_d1e5eae4-e5b4-4add-8bec-90a41b4e7c8b">
+<dc:Bounds x="411.0" y="158.5" width="25.0" height="25.0"/>
+<bpmndi:BPMNLabel/>
+</bpmndi:BPMNShape>
+<bpmndi:BPMNShape bpmnElement="node_ec4fc392-230f-4ac8-bf0d-9a5327a688f6">
+<dc:Bounds x="1.0" y="157.5" width="25.0" height="25.0"/>
+<bpmndi:BPMNLabel/>
+</bpmndi:BPMNShape>
+<bpmndi:BPMNShape bpmnElement="node_55569e72-120d-4f4a-afa4-5094a8ed2d4f">
+<dc:Bounds x="896.0" y="140.5" width="25.0" height="25.0"/>
+<bpmndi:BPMNLabel/>
+</bpmndi:BPMNShape>
+<bpmndi:BPMNShape bpmnElement="node_5f3c2f00-3e18-4681-9878-559c8bb9a229">
+<dc:Bounds x="486.0" y="127.0" width="80.0" height="40.0"/>
+<bpmndi:BPMNLabel/>
+</bpmndi:BPMNShape>
+<bpmndi:BPMNShape bpmnElement="node_add03eea-2249-4a03-bdb0-caa38064d6f3">
+<dc:Bounds x="821.0" y="139.5" width="25.0" height="25.0"/>
+<bpmndi:BPMNLabel/>
+</bpmndi:BPMNShape>
+<bpmndi:BPMNEdge bpmnElement="node_4aa114c6-024a-4dc1-b78c-285456ebcf0e">
+<di:waypoint x="1011.0" y="191.0"/>
+<di:waypoint x="1113.5" y="156.0"/>
+</bpmndi:BPMNEdge>
+<bpmndi:BPMNEdge bpmnElement="node_dc2b44d5-4a0c-4820-9fc9-f095b249fc0e">
+<di:waypoint x="423.5" y="171.0"/>
+<di:waypoint x="526.0" y="147.0"/>
+</bpmndi:BPMNEdge>
+<bpmndi:BPMNEdge bpmnElement="node_2c18f997-00a7-47a0-9bb9-5040c212de01">
+<di:waypoint x="321.0" y="171.0"/>
+<di:waypoint x="423.5" y="171.0"/>
+</bpmndi:BPMNEdge>
+<bpmndi:BPMNEdge bpmnElement="node_c3dfa667-69cf-4655-89de-7a54bacfce99">
+<di:waypoint x="628.5" y="162.0"/>
+<di:waypoint x="731.0" y="127.0"/>
+<di:waypoint x="833.5" y="152.0"/>
+</bpmndi:BPMNEdge>
+<bpmndi:BPMNEdge bpmnElement="node_7ababcab-2042-4c25-883b-c21a8d4e9b71">
+<di:waypoint x="88.5" y="170.0"/>
+<di:waypoint x="191.0" y="147.0"/>
+</bpmndi:BPMNEdge>
+<bpmndi:BPMNEdge bpmnElement="node_bb85603b-3960-48df-8bba-00b30cc9c151">
+<di:waypoint x="833.5" y="152.0"/>
+<di:waypoint x="908.5" y="153.0"/>
+</bpmndi:BPMNEdge>
+<bpmndi:BPMNEdge bpmnElement="node_99e7d2c6-2b12-4e9a-8df6-5e1d7cd54ba8">
+<di:waypoint x="526.0" y="147.0"/>
+<di:waypoint x="628.5" y="162.0"/>
+</bpmndi:BPMNEdge>
+<bpmndi:BPMNEdge bpmnElement="node_2fc822e4-2722-4fae-b0e5-c114ffebe15c">
+<di:waypoint x="1113.5" y="156.0"/>
+<di:waypoint x="1216.0" y="156.0"/>
+</bpmndi:BPMNEdge>
+<bpmndi:BPMNEdge bpmnElement="node_452ef331-791f-4ac5-9faf-576a90a68b7d">
+<di:waypoint x="731.0" y="177.0"/>
+<di:waypoint x="833.5" y="152.0"/>
+</bpmndi:BPMNEdge>
+<bpmndi:BPMNEdge bpmnElement="node_785238cf-9299-4c8a-943b-712236364c81">
+<di:waypoint x="191.0" y="147.0"/>
+<di:waypoint x="321.0" y="171.0"/>
+</bpmndi:BPMNEdge>
+<bpmndi:BPMNEdge bpmnElement="node_24d97aa6-6f16-4c26-bd9e-7a86ca1a6945">
+<di:waypoint x="1216.0" y="156.0"/>
+<di:waypoint x="1318.5" y="156.0"/>
+</bpmndi:BPMNEdge>
+<bpmndi:BPMNEdge bpmnElement="node_8a1c7a37-99e5-41ab-9a5b-347b6a9d652c">
+<di:waypoint x="628.5" y="162.0"/>
+<di:waypoint x="731.0" y="177.0"/>
+</bpmndi:BPMNEdge>
+<bpmndi:BPMNEdge bpmnElement="node_389d893f-ddf2-4d42-abec-ed77b7fff99d">
+<di:waypoint x="88.5" y="170.0"/>
+<di:waypoint x="191.0" y="197.0"/>
+<di:waypoint x="321.0" y="171.0"/>
+</bpmndi:BPMNEdge>
+<bpmndi:BPMNEdge bpmnElement="node_c1213c52-d7e8-443b-8dbc-698d8dbb0fc6">
+<di:waypoint x="908.5" y="153.0"/>
+<di:waypoint x="1011.0" y="121.0"/>
+</bpmndi:BPMNEdge>
+<bpmndi:BPMNEdge bpmnElement="node_f0616585-f27a-44a4-9f0d-6c42d094c7f9">
+<di:waypoint x="423.5" y="171.0"/>
+<di:waypoint x="526.0" y="197.0"/>
+<di:waypoint x="628.5" y="162.0"/>
+</bpmndi:BPMNEdge>
+<bpmndi:BPMNEdge bpmnElement="node_73fd211a-6703-4494-8f60-dd25a07d8c65">
+<di:waypoint x="1011.0" y="121.0"/>
+<di:waypoint x="1113.5" y="156.0"/>
+</bpmndi:BPMNEdge>
+<bpmndi:BPMNEdge bpmnElement="node_d263a059-1410-4890-a4d4-35a800fca5fa">
+<di:waypoint x="908.5" y="153.0"/>
+<di:waypoint x="1011.0" y="191.0"/>
+</bpmndi:BPMNEdge>
+<bpmndi:BPMNEdge bpmnElement="node_70a53de9-2cb9-484c-a92f-1037f1557355">
+<di:waypoint x="13.5" y="170.0"/>
+<di:waypoint x="88.5" y="170.0"/>
+</bpmndi:BPMNEdge>
+</bpmndi:BPMNPlane>
+</bpmndi:BPMNDiagram>
+<qbpapi:Results><qbpapi:Results version="1.4"><qbpapi:process><qbpapi:minCycleTime>1379985.398</qbpapi:minCycleTime><qbpapi:averageCycleTime>1971690.1421106267</qbpapi:averageCycleTime><qbpapi:maxCycleTime>2579789.499</qbpapi:maxCycleTime><qbpapi:totalCycleTime>70404260.915</qbpapi:totalCycleTime><qbpapi:minCost>0</qbpapi:minCost><qbpapi:averageCost>0</qbpapi:averageCost><qbpapi:maxCost>0</qbpapi:maxCost><qbpapi:totalCost>0</qbpapi:totalCost><qbpapi:minDuration>1379985.398</qbpapi:minDuration><qbpapi:averageDuration>1971690.1421106267</qbpapi:averageDuration><qbpapi:maxDuration>2579789.499</qbpapi:maxDuration><qbpapi:processInstances>8000</qbpapi:processInstances></qbpapi:process><qbpapi:elements><qbpapi:element id="proc_586570383.node_3e7949b8-a6bb-4571-9391-1cf9a17ff9ba" name="Clear Invoice"><qbpapi:duration><qbpapi:min>283328.867</qbpapi:min><qbpapi:max>610609.907</qbpapi:max><qbpapi:average>443159.4327252504</qbpapi:average></qbpapi:duration><qbpapi:cost><qbpapi:min>0</qbpapi:min><qbpapi:max>0</qbpapi:max><qbpapi:average>0</qbpapi:average></qbpapi:cost><qbpapi:waitingTime><qbpapi:min>0</qbpapi:min><qbpapi:max>0</qbpapi:max><qbpapi:average>0</qbpapi:average></qbpapi:waitingTime><qbpapi:idleTime><qbpapi:min>0</qbpapi:min><qbpapi:max>0</qbpapi:max><qbpapi:average>0</qbpapi:average></qbpapi:idleTime><qbpapi:costOverThreshold><qbpapi:min>0</qbpapi:min><qbpapi:max>0</qbpapi:max><qbpapi:average>0</qbpapi:average></qbpapi:costOverThreshold><qbpapi:durationOverThreshold><qbpapi:min>0</qbpapi:min><qbpapi:max>0</qbpapi:max><qbpapi:average>0</qbpapi:average></qbpapi:durationOverThreshold><qbpapi:count>8000</qbpapi:count></qbpapi:element><qbpapi:element id="proc_586570383.node_b9ecb46e-5c07-4395-a682-129f75db501d" name="Create Purchase Order"><qbpapi:duration><qbpapi:min>68368.729</qbpapi:min><qbpapi:max>167087.342</qbpapi:max><qbpapi:average>119375.05123225016</qbpapi:average></qbpapi:duration><qbpapi:cost><qbpapi:min>0</qbpapi:min><qbpapi:max>0</qbpapi:max><qbpapi:average>0</qbpapi:average></qbpapi:cost><qbpapi:waitingTime><qbpapi:min>0</qbpapi:min><qbpapi:max>32797.358000040054</qbpapi:max><qbpapi:average>722.9150007500052</qbpapi:average></qbpapi:waitingTime><qbpapi:idleTime><qbpapi:min>0</qbpapi:min><qbpapi:max>0</qbpapi:max><qbpapi:average>0</qbpapi:average></qbpapi:idleTime><qbpapi:costOverThreshold><qbpapi:min>0</qbpapi:min><qbpapi:max>0</qbpapi:max><qbpapi:average>0</qbpapi:average></qbpapi:costOverThreshold><qbpapi:durationOverThreshold><qbpapi:min>0</qbpapi:min><qbpapi:max>0</qbpapi:max><qbpapi:average>0</qbpapi:average></qbpapi:durationOverThreshold><qbpapi:count>8000</qbpapi:count></qbpapi:element><qbpapi:element id="proc_586570383.node_aac5b3dc-6216-410b-8dbb-7ea7081d8d8f" name="Create Purchase Requisition"><qbpapi:duration><qbpapi:min>11065.524</qbpapi:min><qbpapi:max>30118.779</qbpapi:max><qbpapi:average>17694.98000341416</qbpapi:average></qbpapi:duration><qbpapi:cost><qbpapi:min>0</qbpapi:min><qbpapi:max>0</qbpapi:max><qbpapi:average>0</qbpapi:average></qbpapi:cost><qbpapi:waitingTime><qbpapi:min>0</qbpapi:min><qbpapi:max>13591.736999988556</qbpapi:max><qbpapi:average>319.9792669856048</qbpapi:average></qbpapi:waitingTime><qbpapi:idleTime><qbpapi:min>0</qbpapi:min><qbpapi:max>0</qbpapi:max><qbpapi:average>0</qbpapi:average></qbpapi:idleTime><qbpapi:costOverThreshold><qbpapi:min>0</qbpapi:min><qbpapi:max>0</qbpapi:max><qbpapi:average>0</qbpapi:average></qbpapi:costOverThreshold><qbpapi:durationOverThreshold><qbpapi:min>0</qbpapi:min><qbpapi:max>0</qbpapi:max><qbpapi:average>0</qbpapi:average></qbpapi:durationOverThreshold><qbpapi:count>5858</qbpapi:count></qbpapi:element><qbpapi:element id="proc_586570383.node_92781840-69aa-493c-b264-e4355237434e" name="END EVENT"><qbpapi:duration><qbpapi:min>0</qbpapi:min><qbpapi:max>0</qbpapi:max><qbpapi:average>0</qbpapi:average></qbpapi:duration><qbpapi:cost><qbpapi:min>0</qbpapi:min><qbpapi:max>0</qbpapi:max><qbpapi:average>0</qbpapi:average></qbpapi:cost><qbpapi:waitingTime><qbpapi:min>0</qbpapi:min><qbpapi:max>0</qbpapi:max><qbpapi:average>0</qbpapi:average></qbpapi:waitingTime><qbpapi:idleTime><qbpapi:min>0</qbpapi:min><qbpapi:max>0</qbpapi:max><qbpapi:average>0</qbpapi:average></qbpapi:idleTime><qbpapi:costOverThreshold><qbpapi:min>0</qbpapi:min><qbpapi:max>0</qbpapi:max><qbpapi:average>0</qbpapi:average></qbpapi:costOverThreshold><qbpapi:durationOverThreshold><qbpapi:min>0</qbpapi:min><qbpapi:max>0</qbpapi:max><qbpapi:average>0</qbpapi:average></qbpapi:durationOverThreshold><qbpapi:count>8000</qbpapi:count></qbpapi:element><qbpapi:element id="proc_586570383.node_a34f69ac-104d-4dd9-adee-2e0cbc639df6" name="Exclusive gateway"><qbpapi:duration><qbpapi:min>0</qbpapi:min><qbpapi:max>0</qbpapi:max><qbpapi:average>0</qbpapi:average></qbpapi:duration><qbpapi:cost><qbpapi:min>0</qbpapi:min><qbpapi:max>0</qbpapi:max><qbpapi:average>0</qbpapi:average></qbpapi:cost><qbpapi:waitingTime><qbpapi:min>0</qbpapi:min><qbpapi:max>0</qbpapi:max><qbpapi:average>0</qbpapi:average></qbpapi:waitingTime><qbpapi:idleTime><qbpapi:min>0</qbpapi:min><qbpapi:max>0</qbpapi:max><qbpapi:average>0</qbpapi:average></qbpapi:idleTime><qbpapi:costOverThreshold><qbpapi:min>0</qbpapi:min><qbpapi:max>0</qbpapi:max><qbpapi:average>0</qbpapi:average></qbpapi:costOverThreshold><qbpapi:durationOverThreshold><qbpapi:min>0</qbpapi:min><qbpapi:max>0</qbpapi:max><qbpapi:average>0</qbpapi:average></qbpapi:durationOverThreshold><qbpapi:count>8000</qbpapi:count></qbpapi:element><qbpapi:element id="proc_586570383.node_1c5a9dc5-5204-4e73-bfad-42e61d7e9785" name="Exclusive gateway"><qbpapi:duration><qbpapi:min>0</qbpapi:min><qbpapi:max>0</qbpapi:max><qbpapi:average>0</qbpapi:average></qbpapi:duration><qbpapi:cost><qbpapi:min>0</qbpapi:min><qbpapi:max>0</qbpapi:max><qbpapi:average>0</qbpapi:average></qbpapi:cost><qbpapi:waitingTime><qbpapi:min>0</qbpapi:min><qbpapi:max>0</qbpapi:max><qbpapi:average>0</qbpapi:average></qbpapi:waitingTime><qbpapi:idleTime><qbpapi:min>0</qbpapi:min><qbpapi:max>0</qbpapi:max><qbpapi:average>0</qbpapi:average></qbpapi:idleTime><qbpapi:costOverThreshold><qbpapi:min>0</qbpapi:min><qbpapi:max>0</qbpapi:max><qbpapi:average>0</qbpapi:average></qbpapi:costOverThreshold><qbpapi:durationOverThreshold><qbpapi:min>0</qbpapi:min><qbpapi:max>0</qbpapi:max><qbpapi:average>0</qbpapi:average></qbpapi:durationOverThreshold><qbpapi:count>8000</qbpapi:count></qbpapi:element><qbpapi:element id="proc_586570383.node_add03eea-2249-4a03-bdb0-caa38064d6f3" name="Exclusive gateway"><qbpapi:duration><qbpapi:min>0</qbpapi:min><qbpapi:max>0</qbpapi:max><qbpapi:average>0</qbpapi:average></qbpapi:duration><qbpapi:cost><qbpapi:min>0</qbpapi:min><qbpapi:max>0</qbpapi:max><qbpapi:average>0</qbpapi:average></qbpapi:cost><qbpapi:waitingTime><qbpapi:min>0</qbpapi:min><qbpapi:max>0</qbpapi:max><qbpapi:average>0</qbpapi:average></qbpapi:waitingTime><qbpapi:idleTime><qbpapi:min>0</qbpapi:min><qbpapi:max>0</qbpapi:max><qbpapi:average>0</qbpapi:average></qbpapi:idleTime><qbpapi:costOverThreshold><qbpapi:min>0</qbpapi:min><qbpapi:max>0</qbpapi:max><qbpapi:average>0</qbpapi:average></qbpapi:costOverThreshold><qbpapi:durationOverThreshold><qbpapi:min>0</qbpapi:min><qbpapi:max>0</qbpapi:max><qbpapi:average>0</qbpapi:average></qbpapi:durationOverThreshold><qbpapi:count>8000</qbpapi:count></qbpapi:element><qbpapi:element id="proc_586570383.node_d1e5eae4-e5b4-4add-8bec-90a41b4e7c8b" name="Exclusive gateway"><qbpapi:duration><qbpapi:min>0</qbpapi:min><qbpapi:max>0</qbpapi:max><qbpapi:average>0</qbpapi:average></qbpapi:duration><qbpapi:cost><qbpapi:min>0</qbpapi:min><qbpapi:max>0</qbpapi:max><qbpapi:average>0</qbpapi:average></qbpapi:cost><qbpapi:waitingTime><qbpapi:min>0</qbpapi:min><qbpapi:max>0</qbpapi:max><qbpapi:average>0</qbpapi:average></qbpapi:waitingTime><qbpapi:idleTime><qbpapi:min>0</qbpapi:min><qbpapi:max>0</qbpapi:max><qbpapi:average>0</qbpapi:average></qbpapi:idleTime><qbpapi:costOverThreshold><qbpapi:min>0</qbpapi:min><qbpapi:max>0</qbpapi:max><qbpapi:average>0</qbpapi:average></qbpapi:costOverThreshold><qbpapi:durationOverThreshold><qbpapi:min>0</qbpapi:min><qbpapi:max>0</qbpapi:max><qbpapi:average>0</qbpapi:average></qbpapi:durationOverThreshold><qbpapi:count>8000</qbpapi:count></qbpapi:element><qbpapi:element id="proc_586570383.node_55569e72-120d-4f4a-afa4-5094a8ed2d4f" name="Parallel gateway"><qbpapi:duration><qbpapi:min>0</qbpapi:min><qbpapi:max>0</qbpapi:max><qbpapi:average>0</qbpapi:average></qbpapi:duration><qbpapi:cost><qbpapi:min>0</qbpapi:min><qbpapi:max>0</qbpapi:max><qbpapi:average>0</qbpapi:average></qbpapi:cost><qbpapi:waitingTime><qbpapi:min>0</qbpapi:min><qbpapi:max>0</qbpapi:max><qbpapi:average>0</qbpapi:average></qbpapi:waitingTime><qbpapi:idleTime><qbpapi:min>0</qbpapi:min><qbpapi:max>0</qbpapi:max><qbpapi:average>0</qbpapi:average></qbpapi:idleTime><qbpapi:costOverThreshold><qbpapi:min>0</qbpapi:min><qbpapi:max>0</qbpapi:max><qbpapi:average>0</qbpapi:average></qbpapi:costOverThreshold><qbpapi:durationOverThreshold><qbpapi:min>0</qbpapi:min><qbpapi:max>0</qbpapi:max><qbpapi:average>0</qbpapi:average></qbpapi:durationOverThreshold><qbpapi:count>8000</qbpapi:count></qbpapi:element><qbpapi:element id="proc_586570383.node_831b7367-882e-42f5-82f4-23b566b109b8" name="Parallel gateway"><qbpapi:duration><qbpapi:min>0</qbpapi:min><qbpapi:max>0</qbpapi:max><qbpapi:average>0</qbpapi:average></qbpapi:duration><qbpapi:cost><qbpapi:min>0</qbpapi:min><qbpapi:max>0</qbpapi:max><qbpapi:average>0</qbpapi:average></qbpapi:cost><qbpapi:waitingTime><qbpapi:min>0</qbpapi:min><qbpapi:max>0</qbpapi:max><qbpapi:average>0</qbpapi:average></qbpapi:waitingTime><qbpapi:idleTime><qbpapi:min>0</qbpapi:min><qbpapi:max>0</qbpapi:max><qbpapi:average>0</qbpapi:average></qbpapi:idleTime><qbpapi:costOverThreshold><qbpapi:min>0</qbpapi:min><qbpapi:max>0</qbpapi:max><qbpapi:average>0</qbpapi:average></qbpapi:costOverThreshold><qbpapi:durationOverThreshold><qbpapi:min>0</qbpapi:min><qbpapi:max>0</qbpapi:max><qbpapi:average>0</qbpapi:average></qbpapi:durationOverThreshold><qbpapi:count>8000</qbpapi:count></qbpapi:element><qbpapi:element id="proc_586570383.node_5f3c2f00-3e18-4681-9878-559c8bb9a229" name="Print and Send Purchase Order (Paper)"><qbpapi:duration><qbpapi:min>3.313</qbpapi:min><qbpapi:max>7.152</qbpapi:max><qbpapi:average>5.006310716692888</qbpapi:average></qbpapi:duration><qbpapi:cost><qbpapi:min>0</qbpapi:min><qbpapi:max>0</qbpapi:max><qbpapi:average>0</qbpapi:average></qbpapi:cost><qbpapi:waitingTime><qbpapi:min>0</qbpapi:min><qbpapi:max>0</qbpapi:max><qbpapi:average>0</qbpapi:average></qbpapi:waitingTime><qbpapi:idleTime><qbpapi:min>0</qbpapi:min><qbpapi:max>0</qbpapi:max><qbpapi:average>0</qbpapi:average></qbpapi:idleTime><qbpapi:costOverThreshold><qbpapi:min>0</qbpapi:min><qbpapi:max>0</qbpapi:max><qbpapi:average>0</qbpapi:average></qbpapi:costOverThreshold><qbpapi:durationOverThreshold><qbpapi:min>0</qbpapi:min><qbpapi:max>0</qbpapi:max><qbpapi:average>0</qbpapi:average></qbpapi:durationOverThreshold><qbpapi:count>4451</qbpapi:count></qbpapi:element><qbpapi:element id="proc_586570383.node_bde166fa-3414-49ae-9c52-e3f3da7d31a1" name="Receive Order Confirmation"><qbpapi:duration><qbpapi:min>235669.708</qbpapi:min><qbpapi:max>528138.78</qbpapi:max><qbpapi:average>380774.2792283246</qbpapi:average></qbpapi:duration><qbpapi:cost><qbpapi:min>0</qbpapi:min><qbpapi:max>0</qbpapi:max><qbpapi:average>0</qbpapi:average></qbpapi:cost><qbpapi:waitingTime><qbpapi:min>0</qbpapi:min><qbpapi:max>0</qbpapi:max><qbpapi:average>0</qbpapi:average></qbpapi:waitingTime><qbpapi:idleTime><qbpapi:min>0</qbpapi:min><qbpapi:max>0</qbpapi:max><qbpapi:average>0</qbpapi:average></qbpapi:idleTime><qbpapi:costOverThreshold><qbpapi:min>0</qbpapi:min><qbpapi:max>0</qbpapi:max><qbpapi:average>0</qbpapi:average></qbpapi:costOverThreshold><qbpapi:durationOverThreshold><qbpapi:min>0</qbpapi:min><qbpapi:max>0</qbpapi:max><qbpapi:average>0</qbpapi:average></qbpapi:durationOverThreshold><qbpapi:count>5098</qbpapi:count></qbpapi:element><qbpapi:element id="proc_586570383.node_b5c43472-b580-456a-b6ce-b2c2826c7066" name="Record Goods Receipt"><qbpapi:duration><qbpapi:min>559572.214</qbpapi:min><qbpapi:max>1406771.457</qbpapi:max><qbpapi:average>1021785.6239484992</qbpapi:average></qbpapi:duration><qbpapi:cost><qbpapi:min>0</qbpapi:min><qbpapi:max>0</qbpapi:max><qbpapi:average>0</qbpapi:average></qbpapi:cost><qbpapi:waitingTime><qbpapi:min>0</qbpapi:min><qbpapi:max>0</qbpapi:max><qbpapi:average>0</qbpapi:average></qbpapi:waitingTime><qbpapi:idleTime><qbpapi:min>0</qbpapi:min><qbpapi:max>0</qbpapi:max><qbpapi:average>0</qbpapi:average></qbpapi:idleTime><qbpapi:costOverThreshold><qbpapi:min>0</qbpapi:min><qbpapi:max>0</qbpapi:max><qbpapi:average>0</qbpapi:average></qbpapi:costOverThreshold><qbpapi:durationOverThreshold><qbpapi:min>0</qbpapi:min><qbpapi:max>0</qbpapi:max><qbpapi:average>0</qbpapi:average></qbpapi:durationOverThreshold><qbpapi:count>8000</qbpapi:count></qbpapi:element><qbpapi:element id="proc_586570383.node_1801d33c-c54c-4b5c-b8ea-8f82a929a7d8" name="Record Invoice Receipt"><qbpapi:duration><qbpapi:min>698562.584</qbpapi:min><qbpapi:max>1537166</qbpapi:max><qbpapi:average>1131863.8053983715</qbpapi:average></qbpapi:duration><qbpapi:cost><qbpapi:min>0</qbpapi:min><qbpapi:max>0</qbpapi:max><qbpapi:average>0</qbpapi:average></qbpapi:cost><qbpapi:waitingTime><qbpapi:min>0</qbpapi:min><qbpapi:max>0</qbpapi:max><qbpapi:average>0</qbpapi:average></qbpapi:waitingTime><qbpapi:idleTime><qbpapi:min>0</qbpapi:min><qbpapi:max>0</qbpapi:max><qbpapi:average>0</qbpapi:average></qbpapi:idleTime><qbpapi:costOverThreshold><qbpapi:min>0</qbpapi:min><qbpapi:max>0</qbpapi:max><qbpapi:average>0</qbpapi:average></qbpapi:costOverThreshold><qbpapi:durationOverThreshold><qbpapi:min>0</qbpapi:min><qbpapi:max>0</qbpapi:max><qbpapi:average>0</qbpapi:average></qbpapi:durationOverThreshold><qbpapi:count>8000</qbpapi:count></qbpapi:element><qbpapi:element id="proc_586570383.node_ec4fc392-230f-4ac8-bf0d-9a5327a688f6" name="START EVENT"><qbpapi:duration><qbpapi:min>0</qbpapi:min><qbpapi:max>0</qbpapi:max><qbpapi:average>0</qbpapi:average></qbpapi:duration><qbpapi:cost><qbpapi:min>0</qbpapi:min><qbpapi:max>0</qbpapi:max><qbpapi:average>0</qbpapi:average></qbpapi:cost><qbpapi:waitingTime><qbpapi:min>0</qbpapi:min><qbpapi:max>0</qbpapi:max><qbpapi:average>0</qbpapi:average></qbpapi:waitingTime><qbpapi:idleTime><qbpapi:min>0</qbpapi:min><qbpapi:max>0</qbpapi:max><qbpapi:average>0</qbpapi:average></qbpapi:idleTime><qbpapi:costOverThreshold><qbpapi:min>0</qbpapi:min><qbpapi:max>0</qbpapi:max><qbpapi:average>0</qbpapi:average></qbpapi:costOverThreshold><qbpapi:durationOverThreshold><qbpapi:min>0</qbpapi:min><qbpapi:max>0</qbpapi:max><qbpapi:average>0</qbpapi:average></qbpapi:durationOverThreshold><qbpapi:count>8000</qbpapi:count></qbpapi:element></qbpapi:elements><qbpapi:resources><qbpapi:resource id="qbp_a73adebd-63a6-7b89-5b8e-ff21b4e33880"><qbpapi:utilization>0.000011186295168993181</qbpapi:utilization></qbpapi:resource><qbpapi:resource id="QBP_DEFAULT_RESOURCE"><qbpapi:utilization>0.1628673392444773</qbpapi:utilization></qbpapi:resource><qbpapi:resource id="qbp_fbe1eb8a-4b50-fb51-b0c0-43a0d95e6891"><qbpapi:utilization>0.47472292165368996</qbpapi:utilization></qbpapi:resource><qbpapi:resource id="qbp_ded37e6d-b3c0-5f7f-7913-434d35bbc084"><qbpapi:utilization>0.4577403696827355</qbpapi:utilization></qbpapi:resource><qbpapi:resource id="qbp_4f018df5-ba1d-ed4a-cab7-52c3e1ca49cd"><qbpapi:utilization>0.41345095368920876</qbpapi:utilization></qbpapi:resource><qbpapi:resource id="qbp_93530aee-bf20-0abe-1e8d-d99a54a419b4"><qbpapi:utilization>0.4144332865026408</qbpapi:utilization></qbpapi:resource><qbpapi:resource id="qbp_aa90e97d-60a0-5022-1a32-5fb5c9955224"><qbpapi:utilization>0.4456512234549927</qbpapi:utilization></qbpapi:resource></qbpapi:resources></qbpapi:Results><qbpapi:CycleTimesData><qbpapi:min>1379985.398</qbpapi:min><qbpapi:max>2579789.499</qbpapi:max><qbpapi:binWidth>119981</qbpapi:binWidth><qbpapi:values><qbpapi:value>41</qbpapi:value><qbpapi:value>394</qbpapi:value><qbpapi:value>1191</qbpapi:value><qbpapi:value>1013</qbpapi:value><qbpapi:value>843</qbpapi:value><qbpapi:value>1843</qbpapi:value><qbpapi:value>1806</qbpapi:value><qbpapi:value>745</qbpapi:value><qbpapi:value>111</qbpapi:value><qbpapi:value>13</qbpapi:value></qbpapi:values></qbpapi:CycleTimesData><qbpapi:CycleTimesInTimetableData><qbpapi:min>1379985.398</qbpapi:min><qbpapi:max>2579789.499</qbpapi:max><qbpapi:binWidth>119981</qbpapi:binWidth><qbpapi:values><qbpapi:value>41</qbpapi:value><qbpapi:value>394</qbpapi:value><qbpapi:value>1191</qbpapi:value><qbpapi:value>1013</qbpapi:value><qbpapi:value>843</qbpapi:value><qbpapi:value>1843</qbpapi:value><qbpapi:value>1806</qbpapi:value><qbpapi:value>745</qbpapi:value><qbpapi:value>111</qbpapi:value><qbpapi:value>13</qbpapi:value></qbpapi:values></qbpapi:CycleTimesInTimetableData><qbpapi:WaitingTimesData><qbpapi:min>0</qbpapi:min><qbpapi:max>35389.91200017929</qbpapi:max><qbpapi:binWidth>3539</qbpapi:binWidth><qbpapi:values><qbpapi:value>7366</qbpapi:value><qbpapi:value>214</qbpapi:value><qbpapi:value>155</qbpapi:value><qbpapi:value>85</qbpapi:value><qbpapi:value>66</qbpapi:value><qbpapi:value>48</qbpapi:value><qbpapi:value>32</qbpapi:value><qbpapi:value>22</qbpapi:value><qbpapi:value>7</qbpapi:value><qbpapi:value>5</qbpapi:value></qbpapi:values></qbpapi:WaitingTimesData><qbpapi:CostsData><qbpapi:min>0</qbpapi:min><qbpapi:max>5e-324</qbpapi:max><qbpapi:binWidth>1</qbpapi:binWidth><qbpapi:values><qbpapi:value>8000</qbpapi:value></qbpapi:values></qbpapi:CostsData></qbpapi:Results><qbp:processSimulationInfo id="qbp_72b1f9f0-5f99-d8ea-a697-cafb4d901f14" processInstances="10000" startDateTime="2008-01-02T23:00:00.000Z" currency="EUR"><qbp:arrivalRateDistribution type="EXPONENTIAL" mean="NaN" arg1="1800" arg2="NaN"><qbp:timeUnit>minutes</qbp:timeUnit></qbp:arrivalRateDistribution><qbp:timetables><qbp:timetable id="QBP_DEFAULT_TIMETABLE" default="true" name="Default"><qbp:rules><qbp:rule fromTime="09:00:00.000+00:00" toTime="17:00:00.000+00:00" fromWeekDay="MONDAY" toWeekDay="FRIDAY"/></qbp:rules></qbp:timetable><qbp:timetable id="QBP_247_TIMETABLE" default="false" name="24/7"><qbp:rules><qbp:rule fromTime="00:00:00.000+00:00" toTime="23:59:59.999+00:00" fromWeekDay="MONDAY" toWeekDay="SUNDAY"/></qbp:rules></qbp:timetable></qbp:timetables><qbp:resources><qbp:resource id="QBP_DEFAULT_RESOURCE" name="ROLE 1" totalAmount="10" costPerHour="0" timetableId="QBP_247_TIMETABLE"/><qbp:resource id="qbp_fbe1eb8a-4b50-fb51-b0c0-43a0d95e6891" name="ROLE 2" totalAmount="32" costPerHour="0" timetableId="QBP_247_TIMETABLE"/><qbp:resource id="qbp_a73adebd-63a6-7b89-5b8e-ff21b4e33880" name="ROLE 3" totalAmount="32" costPerHour="0" timetableId="QBP_247_TIMETABLE"/><qbp:resource id="qbp_aa90e97d-60a0-5022-1a32-5fb5c9955224" name="ROLE 4" totalAmount="70" costPerHour="0" timetableId="QBP_247_TIMETABLE"/><qbp:resource id="qbp_ded37e6d-b3c0-5f7f-7913-434d35bbc084" name="ROLE 5" totalAmount="320" costPerHour="0" timetableId="QBP_247_TIMETABLE"/><qbp:resource id="qbp_4f018df5-ba1d-ed4a-cab7-52c3e1ca49cd" name="ROLE 6" totalAmount="320" costPerHour="0" timetableId="QBP_247_TIMETABLE"/><qbp:resource id="qbp_93530aee-bf20-0abe-1e8d-d99a54a419b4" name="ROLE 7" totalAmount="140" costPerHour="0" timetableId="QBP_247_TIMETABLE"/></qbp:resources><qbp:elements><qbp:element id="qbp_4d95ab5a-bfa6-6e38-c755-068b368199ad" elementId="node_3e7949b8-a6bb-4571-9391-1cf9a17ff9ba"><qbp:durationDistribution type="NORMAL" mean="443893" arg1="44389.3" arg2="NaN"><qbp:timeUnit>seconds</qbp:timeUnit></qbp:durationDistribution><qbp:resourceIds><qbp:resourceId>qbp_93530aee-bf20-0abe-1e8d-d99a54a419b4</qbp:resourceId></qbp:resourceIds></qbp:element><qbp:element id="qbp_cd50ef0c-0a14-41ad-5700-63885855565b" elementId="node_b9ecb46e-5c07-4395-a682-129f75db501d"><qbp:durationDistribution type="NORMAL" mean="118594" arg1="11859.4" arg2="NaN"><qbp:timeUnit>seconds</qbp:timeUnit></qbp:durationDistribution><qbp:resourceIds><qbp:resourceId>qbp_fbe1eb8a-4b50-fb51-b0c0-43a0d95e6891</qbp:resourceId></qbp:resourceIds></qbp:element><qbp:element id="qbp_81c1682d-4602-70fe-d345-2e2f60fbfb13" elementId="node_aac5b3dc-6216-410b-8dbb-7ea7081d8d8f"><qbp:durationDistribution type="NORMAL" mean="17396" arg1="1739.6" arg2="NaN"><qbp:timeUnit>seconds</qbp:timeUnit></qbp:durationDistribution><qbp:resourceIds><qbp:resourceId>QBP_DEFAULT_RESOURCE</qbp:resourceId></qbp:resourceIds></qbp:element><qbp:element id="qbp_5e54dca0-1c6c-4b89-ecbf-50a60996e098" elementId="node_5f3c2f00-3e18-4681-9878-559c8bb9a229"><qbp:durationDistribution type="NORMAL" mean="5" arg1="0.5" arg2="NaN"><qbp:timeUnit>seconds</qbp:timeUnit></qbp:durationDistribution><qbp:resourceIds><qbp:resourceId>qbp_a73adebd-63a6-7b89-5b8e-ff21b4e33880</qbp:resourceId></qbp:resourceIds></qbp:element><qbp:element id="qbp_e1297c19-2b62-3f66-953f-06497b316486" elementId="node_bde166fa-3414-49ae-9c52-e3f3da7d31a1"><qbp:durationDistribution type="NORMAL" mean="380721" arg1="38072.1" arg2="NaN"><qbp:timeUnit>seconds</qbp:timeUnit></qbp:durationDistribution><qbp:resourceIds><qbp:resourceId>qbp_aa90e97d-60a0-5022-1a32-5fb5c9955224</qbp:resourceId></qbp:resourceIds></qbp:element><qbp:element id="qbp_9118bb4d-0ce7-08e6-523c-f7a040b55c6b" elementId="node_b5c43472-b580-456a-b6ce-b2c2826c7066"><qbp:durationDistribution type="NORMAL" mean="1022162" arg1="102216.2" arg2="NaN"><qbp:timeUnit>seconds</qbp:timeUnit></qbp:durationDistribution><qbp:resourceIds><qbp:resourceId>qbp_4f018df5-ba1d-ed4a-cab7-52c3e1ca49cd</qbp:resourceId></qbp:resourceIds></qbp:element><qbp:element id="qbp_26543518-6dba-bd26-d23f-a02bc57b6994" elementId="node_1801d33c-c54c-4b5c-b8ea-8f82a929a7d8"><qbp:durationDistribution type="NORMAL" mean="1130584" arg1="113058.4" arg2="NaN"><qbp:timeUnit>seconds</qbp:timeUnit></qbp:durationDistribution><qbp:resourceIds><qbp:resourceId>qbp_ded37e6d-b3c0-5f7f-7913-434d35bbc084</qbp:resourceId></qbp:resourceIds></qbp:element></qbp:elements><qbp:sequenceFlows><qbp:sequenceFlow elementId="node_389d893f-ddf2-4d42-abec-ed77b7fff99d" executionProbability="0.27"/><qbp:sequenceFlow elementId="node_7ababcab-2042-4c25-883b-c21a8d4e9b71" executionProbability="0.73"/><qbp:sequenceFlow elementId="node_f0616585-f27a-44a4-9f0d-6c42d094c7f9" executionProbability="0.43799999999999994"/><qbp:sequenceFlow elementId="node_dc2b44d5-4a0c-4820-9fc9-f095b249fc0e" executionProbability="0.562"/><qbp:sequenceFlow elementId="node_8a1c7a37-99e5-41ab-9a5b-347b6a9d652c" executionProbability="0.6409999999999999"/><qbp:sequenceFlow elementId="node_c3dfa667-69cf-4655-89de-7a54bacfce99" executionProbability="0.359"/></qbp:sequenceFlows><qbp:statsOptions trimStartProcessInstances="0" trimEndProcessInstances="0"/></qbp:processSimulationInfo></definitions>

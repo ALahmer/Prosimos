@@ -1,0 +1,15 @@
+python ../../diff_res_bpsim.py  start-simulation \
+--bpmn_path ../inputs/prosimos/explicit_gateways/PROSIMOS_BPMN_simulation_model.bpmn \
+--json_path ../inputs/prosimos/explicit_gateways/PROSIMOS_simulation_parameters.json \
+--total_cases 10000 \
+--log_out_path ../results/prosimos/explicit_gateways/PROSIMOS_statistics_metrics_simulations_results.csv \
+--stat_out_path ../results/prosimos/explicit_gateways/PROSIMOS_event_log_simulation_result.csv \
+--starting_at '2008-01-03T00:00:00.000000+02:00'
+
+python ../../diff_res_bpsim.py  start-simulation \
+--bpmn_path ../inputs/prosimos/implicit_gateways/PROSIMOS_BPMN_simulation_model.bpmn \
+--json_path ../inputs/prosimos/implicit_gateways/PROSIMOS_simulation_parameters.json \
+--total_cases 10000 \
+--log_out_path ../results/prosimos/implicit_gateways/PROSIMOS_statistics_metrics_simulations_results.csv \
+--stat_out_path ../results/prosimos/implicit_gateways/PROSIMOS_event_log_simulation_result.csv \
+--starting_at '2008-01-03T00:00:00.000000+02:00'
