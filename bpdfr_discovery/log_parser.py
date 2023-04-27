@@ -352,9 +352,9 @@ def preprocess_xes_log(log_path, bpmn_path, out_f_path, minutes_x_granule, min_c
 
             calendar_factory.check_date_time(resource, task_name, timestamp)
             observed_task_resources[task_name].add(resource)
-            if state in ["start", "assign"]:
+            if task_name not in started_events:     # {{TO_ROLLBACK}}
                 started_events[task_name] = trace_info.start_event(task_name, task_name, timestamp, resource)
-            elif state == "complete":
+            if state == "complete":     # {{TO_ROLLBACK}}
                 if task_name in started_events:
                     c_event = trace_info.complete_event(started_events.pop(task_name), timestamp)
                     task_events[task_name].append(c_event)
