@@ -1,0 +1,30 @@
+Element,Parameter,Model_Purchase_Order_Implicit_Gateway_Simulation_Settings
+Clear Invoice,ProcessingTime,Normal(443893,44389.3) s
+Clear Invoice,Selection,getResource('ResourcesRole7',1)
+Create Purchase Order,ProcessingTime,Normal(118594,11859.4) s
+Create Purchase Order,Selection,getResource('ResourcesRole2',1)
+Create Purchase Requisition,ProcessingTime,Normal(17396,1739.6) s
+Create Purchase Requisition,Selection,getResource('ResourcesRole1',1)
+Exclusive Gateway Split 1 --> Create Purchase Order,Probability,0.27
+Exclusive Gateway Split 1 --> Create Purchase Requisition,Probability,0.73
+Exclusive Gateway Split 2 --> Exclusive Gateway Split 3,Probability,0.438
+Exclusive Gateway Split 2 --> Print and Send Purchase Order (Paper),Probability,0.562
+Exclusive Gateway Split 3 --> Parallel Gateway Split,Probability,0.359
+Exclusive Gateway Split 3 --> Receive Order Confirmation,Probability,0.641
+Print and Send Purchase Order (Paper),ProcessingTime,Normal(5,0.5) s
+Print and Send Purchase Order (Paper),Selection,getResource('ResourcesRole3',1)
+Receive Order Confirmation,ProcessingTime,Normal(380721,38072.1) s
+Receive Order Confirmation,Selection,getResource('ResourcesRole4',1)
+Record Goods Receipt,ProcessingTime,Normal(1022162,102216.2) s
+Record Goods Receipt,Selection,getResource('ResourcesRole6',1)
+Record Invoice Receipt,ProcessingTime,Normal(1130584,113058.4) s
+Record Invoice Receipt,Selection,getResource('ResourcesRole5',1)
+ResourcesRole1,Quantity,10
+ResourcesRole2,Quantity,32
+ResourcesRole3,Quantity,32
+ResourcesRole4,Quantity,70
+ResourcesRole5,Quantity,320
+ResourcesRole6,Quantity,320
+ResourcesRole7,Quantity,140
+START EVENT,InterTriggerTimer,Gamma(1800,180) s
+START EVENT,TriggerCount,10000

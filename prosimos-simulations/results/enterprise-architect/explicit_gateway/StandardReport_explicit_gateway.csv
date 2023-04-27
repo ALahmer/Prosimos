@@ -1,0 +1,227 @@
+Element,Parameter,Model_Purchase_Order_Explicit_Gateway_Simulation_Settings- Result
+Clear Invoice --> END EVENT,Quantity,260
+Clear Invoice,Average Number Of Resources Used,1
+Clear Invoice,Mean Of Processing Time,445707.66
+Clear Invoice,Average Time In Task,445707.66
+Clear Invoice,Maximum Number Of Resources Used,1
+Clear Invoice,Maximum Number Of Tokens Waiting For Resource,1
+Clear Invoice,Max Of Processing Time,554987.42
+Clear Invoice,Maximum Time In Task,554987.42
+Clear Invoice,Minimum Number Of Resources Used,1
+Clear Invoice,Min Of Processing Time,319646.43
+Clear Invoice,Minimum Time In Task,319646.43
+Clear Invoice,Number Of Tokens Arrived,261
+Clear Invoice,Number Of Tokens Completed,260
+Clear Invoice,Number Of Tokens Current,1
+Clear Invoice,Number Of Tokens CurrentlyBusy,1
+Clear Invoice,Number Of Tokens Started,261
+Clear Invoice,Total Time Busy,115883991.32
+Clear Invoice,Total Time In Task,115883991.32
+Create Purchase Order --> Exclusive Gateway Split 2,Quantity,266
+Create Purchase Order,Average Number Of Resources Used,1
+Create Purchase Order,Mean Of Processing Time,118060.03
+Create Purchase Order,Average Time In Task,118060.03
+Create Purchase Order,Maximum Number Of Resources Used,1
+Create Purchase Order,Maximum Number Of Tokens Waiting For Resource,1
+Create Purchase Order,Max Of Processing Time,150260.83
+Create Purchase Order,Maximum Time In Task,150260.83
+Create Purchase Order,Minimum Number Of Resources Used,1
+Create Purchase Order,Min Of Processing Time,81028.12
+Create Purchase Order,Minimum Time In Task,81028.12
+Create Purchase Order,Number Of Tokens Arrived,266
+Create Purchase Order,Number Of Tokens Completed,266
+Create Purchase Order,Number Of Tokens Started,266
+Create Purchase Order,Total Time Busy,31403966.98
+Create Purchase Order,Total Time In Task,31403966.98
+Create Purchase Requisition --> Exclusive Gateway Join 1,Quantity,193
+Create Purchase Requisition,Average Number Of Resources Used,1
+Create Purchase Requisition,Mean Of Processing Time,17225.68
+Create Purchase Requisition,Average Time In Task,17225.68
+Create Purchase Requisition,Maximum Number Of Resources Used,1
+Create Purchase Requisition,Maximum Number Of Tokens Waiting For Resource,1
+Create Purchase Requisition,Max Of Processing Time,21879.25
+Create Purchase Requisition,Maximum Time In Task,21879.25
+Create Purchase Requisition,Minimum Number Of Resources Used,1
+Create Purchase Requisition,Min Of Processing Time,13189.64
+Create Purchase Requisition,Minimum Time In Task,13189.64
+Create Purchase Requisition,Number Of Tokens Arrived,193
+Create Purchase Requisition,Number Of Tokens Completed,193
+Create Purchase Requisition,Number Of Tokens Started,193
+Create Purchase Requisition,Total Time Busy,3324555.64
+Create Purchase Requisition,Total Time In Task,3324555.64
+END EVENT,Number Completed,260
+Exclusive Gateway Join 1 --> Create Purchase Order,Quantity,266
+Exclusive Gateway Join 1,Number Of Tokens Completed,266
+Exclusive Gateway Join 1,Number Of Tokens Started,266
+Exclusive Gateway Join 2 --> Exclusive Gateway Split 3,Quantity,266
+Exclusive Gateway Join 2,Number Of Tokens Completed,266
+Exclusive Gateway Join 2,Number Of Tokens Started,266
+Exclusive Gateway Join 3 --> Parallel Gateway Split,Quantity,265
+Exclusive Gateway Join 3,Number Of Tokens Completed,265
+Exclusive Gateway Join 3,Number Of Tokens Started,265
+Exclusive Gateway Split 1 --> Create Purchase Requisition,Quantity,193
+Exclusive Gateway Split 1 --> Exclusive Gateway Join 1,Quantity,73
+Exclusive Gateway Split 1,Number Of Tokens Completed,266
+Exclusive Gateway Split 1,Number Of Tokens Started,266
+Exclusive Gateway Split 2 --> Exclusive Gateway Join 2,Quantity,109
+Exclusive Gateway Split 2 --> Print and Send Purchase Order (Paper),Quantity,157
+Exclusive Gateway Split 2,Number Of Tokens Completed,266
+Exclusive Gateway Split 2,Number Of Tokens Started,266
+Exclusive Gateway Split 3 --> Exclusive Gateway Join 3,Quantity,85
+Exclusive Gateway Split 3 --> Receive Order Confirmation,Quantity,181
+Exclusive Gateway Split 3,Number Of Tokens Completed,266
+Exclusive Gateway Split 3,Number Of Tokens Started,266
+Parallel Gateway Join --> Clear Invoice,Quantity,261
+Parallel Gateway Join,Number Of Tokens Completed,261
+Parallel Gateway Join,Number Of Tokens Current,1
+Parallel Gateway Join,Number Of Tokens Started,262
+Parallel Gateway Join,Total Token Wait Time,39559761.84
+Parallel Gateway Split --> Record Goods Receipt,Quantity,265
+Parallel Gateway Split --> Record Invoice Receipt,Quantity,265
+Parallel Gateway Split,Number Of Tokens Completed,265
+Parallel Gateway Split,Number Of Tokens Started,265
+Print and Send Purchase Order (Paper) --> Exclusive Gateway Join 2,Quantity,157
+Print and Send Purchase Order (Paper),Average Number Of Resources Used,1
+Print and Send Purchase Order (Paper),Mean Of Processing Time,4.93
+Print and Send Purchase Order (Paper),Average Time In Task,4.93
+Print and Send Purchase Order (Paper),Maximum Number Of Resources Used,1
+Print and Send Purchase Order (Paper),Maximum Number Of Tokens Waiting For Resource,1
+Print and Send Purchase Order (Paper),Max Of Processing Time,6.29
+Print and Send Purchase Order (Paper),Maximum Time In Task,6.29
+Print and Send Purchase Order (Paper),Minimum Number Of Resources Used,1
+Print and Send Purchase Order (Paper),Min Of Processing Time,3.87
+Print and Send Purchase Order (Paper),Minimum Time In Task,3.87
+Print and Send Purchase Order (Paper),Number Of Tokens Arrived,157
+Print and Send Purchase Order (Paper),Number Of Tokens Completed,157
+Print and Send Purchase Order (Paper),Number Of Tokens Started,157
+Print and Send Purchase Order (Paper),Total Time Busy,774.29
+Print and Send Purchase Order (Paper),Total Time In Task,774.29
+Receive Order Confirmation --> Exclusive Gateway Join 3,Quantity,180
+Receive Order Confirmation,Average Number Of Resources Used,1
+Receive Order Confirmation,Mean Of Processing Time,381473.68
+Receive Order Confirmation,Average Time In Task,381473.68
+Receive Order Confirmation,Maximum Number Of Resources Used,1
+Receive Order Confirmation,Maximum Number Of Tokens Waiting For Resource,1
+Receive Order Confirmation,Max Of Processing Time,494355.24
+Receive Order Confirmation,Maximum Time In Task,494355.24
+Receive Order Confirmation,Minimum Number Of Resources Used,1
+Receive Order Confirmation,Min Of Processing Time,261518.55
+Receive Order Confirmation,Minimum Time In Task,261518.55
+Receive Order Confirmation,Number Of Tokens Arrived,181
+Receive Order Confirmation,Number Of Tokens Completed,180
+Receive Order Confirmation,Number Of Tokens Current,1
+Receive Order Confirmation,Number Of Tokens CurrentlyBusy,1
+Receive Order Confirmation,Number Of Tokens Started,181
+Receive Order Confirmation,Total Time Busy,68665261.5
+Receive Order Confirmation,Total Time In Task,68665261.5
+Record Goods Receipt --> Parallel Gateway Join,Quantity,262
+Record Goods Receipt,Average Number Of Resources Used,1
+Record Goods Receipt,Mean Of Processing Time,1020670.46
+Record Goods Receipt,Average Time In Task,1020670.46
+Record Goods Receipt,Maximum Number Of Resources Used,1
+Record Goods Receipt,Maximum Number Of Tokens Waiting For Resource,1
+Record Goods Receipt,Max Of Processing Time,1319849.57
+Record Goods Receipt,Maximum Time In Task,1319849.57
+Record Goods Receipt,Minimum Number Of Resources Used,1
+Record Goods Receipt,Min Of Processing Time,707098.29
+Record Goods Receipt,Minimum Time In Task,707098.29
+Record Goods Receipt,Number Of Tokens Arrived,265
+Record Goods Receipt,Number Of Tokens Completed,262
+Record Goods Receipt,Number Of Tokens Current,3
+Record Goods Receipt,Number Of Tokens CurrentlyBusy,3
+Record Goods Receipt,Number Of Tokens Started,265
+Record Goods Receipt,Total Time Busy,267415661.77
+Record Goods Receipt,Total Time In Task,267415661.77
+Record Invoice Receipt --> Parallel Gateway Join,Quantity,261
+Record Invoice Receipt,Average Number Of Resources Used,1
+Record Invoice Receipt,Mean Of Processing Time,1133314.54
+Record Invoice Receipt,Average Time In Task,1133314.54
+Record Invoice Receipt,Maximum Number Of Resources Used,1
+Record Invoice Receipt,Maximum Number Of Tokens Waiting For Resource,1
+Record Invoice Receipt,Max Of Processing Time,1454353.86
+Record Invoice Receipt,Maximum Time In Task,1454353.86
+Record Invoice Receipt,Minimum Number Of Resources Used,1
+Record Invoice Receipt,Min Of Processing Time,827065.01
+Record Invoice Receipt,Minimum Time In Task,827065.01
+Record Invoice Receipt,Number Of Tokens Arrived,265
+Record Invoice Receipt,Number Of Tokens Completed,261
+Record Invoice Receipt,Number Of Tokens Current,4
+Record Invoice Receipt,Number Of Tokens CurrentlyBusy,4
+Record Invoice Receipt,Number Of Tokens Started,265
+Record Invoice Receipt,Total Time Busy,295795094.3
+Record Invoice Receipt,Total Time In Task,295795094.3
+ResourcesRole1,Average Number Available,9.96
+ResourcesRole1,Degree Of Utilisation,0.39%
+ResourcesRole1,Number Completed,193
+ResourcesRole1,Number Started,193
+ResourcesRole1,Number Started Immediately,193
+ResourcesRole1,Total Time Available,863136000
+ResourcesRole1,Total Time Busy,3324555.64
+ResourcesRole1,Total Time For Task,3324555.64
+ResourcesRole1,Total Time Idle,859811444.36
+ResourcesRole2,Average Number Available,31.64
+ResourcesRole2,Degree Of Utilisation,1.14%
+ResourcesRole2,Number Completed,266
+ResourcesRole2,Number Started,266
+ResourcesRole2,Number Started Immediately,266
+ResourcesRole2,Total Time Available,2762035200
+ResourcesRole2,Total Time Busy,31403966.98
+ResourcesRole2,Total Time For Task,31403966.98
+ResourcesRole2,Total Time Idle,2730631233.02
+ResourcesRole3,Average Number Available,32
+ResourcesRole3,Degree Of Utilisation,0%
+ResourcesRole3,Number Completed,157
+ResourcesRole3,Number Started,157
+ResourcesRole3,Number Started Immediately,157
+ResourcesRole3,Total Time Available,2762035200
+ResourcesRole3,Total Time Busy,774.29
+ResourcesRole3,Total Time For Task,774.29
+ResourcesRole3,Total Time Idle,2762034425.71
+ResourcesRole4,Average Number Available,69.2
+ResourcesRole4,Degree Of Utilisation,1.14%
+ResourcesRole4,Number Completed,180
+ResourcesRole4,Number Started,181
+ResourcesRole4,Number Started Immediately,181
+ResourcesRole4,Total Time Available,6041952000
+ResourcesRole4,Total Time Busy,68825733.65
+ResourcesRole4,Total Time For Task,68825733.65
+ResourcesRole4,Total Time Idle,5973126266.35
+ResourcesRole5,Average Number Available,316.54
+ResourcesRole5,Degree Of Utilisation,1.08%
+ResourcesRole5,Number Completed,261
+ResourcesRole5,Number Started,265
+ResourcesRole5,Number Started Immediately,265
+ResourcesRole5,Total Time Available,27620352000
+ResourcesRole5,Total Time Busy,298918998.64
+ResourcesRole5,Total Time For Task,298918998.64
+ResourcesRole5,Total Time Idle,27321433001.36
+ResourcesRole6,Average Number Available,316.88
+ResourcesRole6,Degree Of Utilisation,0.98%
+ResourcesRole6,Number Completed,262
+ResourcesRole6,Number Started,265
+ResourcesRole6,Number Started Immediately,265
+ResourcesRole6,Total Time Available,27620352000
+ResourcesRole6,Total Time Busy,269481742.42
+ResourcesRole6,Total Time For Task,269481742.42
+ResourcesRole6,Total Time Idle,27350870257.59
+ResourcesRole7,Average Number Available,138.65
+ResourcesRole7,Degree Of Utilisation,0.96%
+ResourcesRole7,Number Completed,260
+ResourcesRole7,Number Started,261
+ResourcesRole7,Number Started Immediately,261
+ResourcesRole7,Total Time Available,12083904000
+ResourcesRole7,Total Time Busy,116091926.46
+ResourcesRole7,Total Time For Task,116091926.46
+ResourcesRole7,Total Time Idle,11967812073.54
+START EVENT --> Exclusive Gateway Split 1,Quantity,266
+START EVENT,Number Of Tokens Completed,266
+,Average Time,1988510.13
+,Mean Of Processing Time,2989680.54
+,Maximum Time,2354186.17
+,Max Of Processing Time,3483067.65
+,Minimum Time,1471728.96
+,Min Of Processing Time,2369252.4
+,Number Of Processes Completed,260
+,Number Of Processes Started,266
+,Standard Deviation Time,204370.33
+,Total Time Busy,777316940.8
