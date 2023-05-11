@@ -722,7 +722,7 @@ def run_simpy_simulation(diffsim_info, stat_fwriter, log_fwriter):
     if stat_fwriter:
         bpm_env.log_info.save_joint_statistics(bpm_env)
 
-    return None
+    return bpm_env.log_info.trace_list
 
 
 def verify_miliseconds(array):
