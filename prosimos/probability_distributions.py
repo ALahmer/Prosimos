@@ -30,7 +30,7 @@ def best_fit_distribution(data, bins=50):
     y, x = np.histogram(data, bins=bins, density=True)
     x = (x + np.roll(x, -1))[:-1] / 2.0
 
-    distributions = [st.norm, st.expon, st.exponnorm, st.gamma, st.triang, st.uniform, st.lognorm]
+    distributions = [st.norm, st.expon, st.gamma, st.uniform, st.lognorm]
 
     # Discrete distributions
     # disc_distributions = [

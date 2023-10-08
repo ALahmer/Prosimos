@@ -680,7 +680,7 @@ def run_simpy_simulation(diffsim_info, stat_fwriter, log_fwriter, fixed_starting
 
     warning_logger.add_warnings(bpm_env.sim_setup.bpmn_graph.simulation_execution_stats.find_issues())
 
-    return None
+    return bpm_env.log_info.trace_list
 
 
 def verify_miliseconds(array):
